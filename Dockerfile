@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.8-alpine
 
 ENV PYTHONBUFFERED 1
 
@@ -9,6 +9,8 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
 
+RUN adduser -D user
+USER user
 
 
 
